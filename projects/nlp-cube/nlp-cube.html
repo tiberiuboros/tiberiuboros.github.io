@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link rel="icon" href="assets/favicon.png" />
+    <link
+      rel="canonical"
+      href="https://getbootstrap.com/docs/3.4/examples/navbar-fixed-top/"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Tiberiu Boros - Research Scientist</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+  </head>
+
+  <body>
+   
+    <div class="container" style="width: 100%; max-width: none">
+
+        <div class="col-md-12">
+          <h1 id="about">NLP-Cube</h1>
+          <p>[<a href="https://github.com/adobe/nlp-cube">Project code</a>]</p> [<a href="https://aclanthology.org/K18-2017.pdf">Project paper</a>]
+          <p>
+            NLP-Cube is an opensource Natural Language Processing Framework with support for languages which are included in the UD Treebanks (list of all available languages below). Use NLP-Cube if you need:
+            <ul>
+                <li>Sentence segmentation</li>
+                <li>Tokenization</li>
+                <li>POS Tagging (both language independent (UPOSes) and language dependent (XPOSes and ATTRs))</li>
+                <li>Lemmatization</li>
+                <li>Dependency parsing</li>
+            </ul>
+          </p>
+
+
+          <h1 id="about">Sample output</h1>
+          <p>
+            <pre>
+    # install
+    !pip install -U nlpcube
+    # create instance
+    from cube.api import Cube
+    cube=Cube(verbose=True)
+    # load model
+    cube.load('en')
+    # run
+    text="All the faith he had had, had had no effect on the outcome of his life."
+
+    sentences=cube(text)
+
+    for sentence in sentences:
+        for entry in sentence:
+            print(str(entry.index)+"\t"+entry.word+"\t"+entry.lemma+"\t"+entry.upos+"\t"+entry.xpos+"\t"+entry.attrs+"\t"+str(entry.head)+"\t"+str(entry.label)+"\t"+entry.space_after)
+            print("") 
+            </pre>
+            And this is the output:
+            <pre>
+    1	All	all	DET	PDT	_	3	det:predet	_
+    2	the	the	DET	DT	Definite=Def|PronType=Art	3	det	_
+    3	faith	faith	NOUN	NN	Number=Sing	9	nsubj	_
+    4	he	he	PRON	PRP	Case=Nom|Gender=Masc|Number=Sing|Person=3|PronType=Prs	6	nsubj	_
+    5	had	have	AUX	VBD	Mood=Ind|Tense=Past|VerbForm=Fin	6	aux	_
+    6	had	have	VERB	VBN	Tense=Past|VerbForm=Part	3	acl:relcl	SpaceAfter=No
+    7	,	,	PUNCT	,	_	9	punct	_
+    8	had	have	AUX	VBD	Mood=Ind|Tense=Past|VerbForm=Fin	9	aux	_
+    9	had	have	VERB	VBN	Tense=Past|VerbForm=Part	0	root	_
+    10	no	no	DET	DT	_	11	det	_
+    11	effect	effect	NOUN	NN	Number=Sing	9	obj	_
+    12	on	on	ADP	IN	_	14	case	_
+    13	the	the	DET	DT	Definite=Def|PronType=Art	14	det	_
+    14	outcome	outcome	NOUN	NN	Number=Sing	11	nmod	_
+    15	of	of	ADP	IN	_	17	case	_
+    16	his	he	PRON	PRP$	Gender=Masc|Number=Sing|Person=3|Poss=Yes|PronType=Prs	17	nmod:poss	_
+    17	life	life	NOUN	NN	Number=Sing	14	nmod	SpaceAfter=No
+    18	.	.	PUNCT	.	_	9	punct	SpaceAfter=No
+            </pre>
+           
+          </p>
+
+        </div>
+      </div>
+
+      <!-- Main component for a primary marketing message or call to action -->
+    </div>
+    <!-- /container -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <footer class="mt-auto text-white-50">
+      <p>Thanks for reading and see you on GitHub</p>
+    </footer>
+  </body>
+</html>
+<!--<!doctype html>
+<html lang="en" class="h-100">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.84.0">
+    <title>About Tiberiu Boros</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/cover/">
+
+    
+
+<link href="assets/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+    <link href="assets/cover.css" rel="stylesheet">
+  </head>
+  <body class="d-flex h-100 text-center text-white bg-dark">
+    
+<div class="container cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+  <header class="mb-auto">
+    <div>
+      <h3 class="float-md-start mb-0">Cover</h3>
+      <nav class="nav nav-masthead justify-content-center float-md-end navbar navbar-default navbar-fixed-top">
+        <a class="nav-link active" aria-current="page" href="#about">About me</a>
+        <a class="nav-link" href="#projects">Selected Projects</a>
+        <a class="nav-link" href="#publications">Selected Publications</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="px-3">
+    <img src="assets/tiberiu_boros.jpg" class="rounded-circle" alt="img" style="height:25%;border-radius: 50%;">
+    <h1>Tiberiu Boros</h1></p>
+    <p class="lead" id="about">
+      About me
+    </p>
+    <p>
+      I am a PhD in Computer Science, specifically in the field of Spoken Language Processing. I'm am currently working for Adobe Systems and was previously a researcher at the Research Institute for Artificial Intelligence of the Romanian Academy. 
+      Additionally, I maintain several Machine Learning open source projects (such as <a href="https://github.com/tiberiu44/TTS-Cube">TTS-Cube</a> and <a href="https://github.com/adobe/NLP-Cube">NLP-Cube</a>) and I contributed to several other projects, such as the the <a href="https://github.com/clab/dynet">DyNet Machine Learning Framework</a> (developed by Carnegie Mellon University and many others). My current research focus is on applied Natural Language and Speech Processing. 
+    </p>
+
+    <p class="lead" id="projects">
+      Selected projects
+    </p>
+    <p>
+      NLP-Cube<br/>
+      NLP-Cube<br/>
+      NLP-Cube<br/>
+      NLP-Cube<br/>
+      NLP-Cube<br/>
+      NLP-Cube<br/>
+
+    </p>
+
+  </main>
+
+
+</div>
+
+
+    
+  </body>
+</html>
+-->
